@@ -10,14 +10,14 @@ jobs:
     steps:
       - checkout
       - run:
-        command: npm ci
-        name: Install dependencies
+          command: npm ci
+          name: Install dependencies
       - run:
-        command: yarn nx test monofe
-        name: Run angular tests
+          command: yarn nx test monofe
+          name: Run angular tests
       - run:
-        command: yarn nx build monofe --prod
-        name: Build production
+          command: yarn nx build monofe --prod
+          name: Build production
 
 workflows:
   test-build-fe:
