@@ -1,0 +1,25 @@
+version: 2.1
+
+orbs:
+  nx: nrwl/nx@1.1.2
+
+jobs:
+  fe-flow:
+    docker:
+      - image: cimg/node:16.0.3
+    steps:
+      - checkout
+      - run:
+        command: npm ci
+        name: Install dependencies
+      - run:
+        command: yarn nx test monofe
+        name: Run angular tests
+      - run:
+        command: yarn nx build monofe --prod
+        name: Build production
+
+workflows:
+  test-build-fe:
+    jobs:
+      - fe-flow
