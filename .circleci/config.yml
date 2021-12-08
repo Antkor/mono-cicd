@@ -19,7 +19,7 @@ jobs:
           command: yarn nx build monofe --prod
           name: Build production
       - run:
-          command: scp -r /dist $$USER@188.166.104.56:/var/www/html
+          command: scp -r /dist $USER@188.166.104.56:/var/www/html
           name: Copy files to server
 
 workflows:
