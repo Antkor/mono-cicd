@@ -18,6 +18,9 @@ jobs:
       - run:
           command: yarn nx build monofe --prod
           name: Build production
+      - run:
+          command: ls -al
+          name: Show files
 
 workflows:
   test-build-fe:
