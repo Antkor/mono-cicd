@@ -35,8 +35,6 @@ jobs:
 workflows:
   test-build-fe:
     when:
-      matches:
-        pattern: "^main$"
-        value: << pipeline.git.branch >>
+      equal: [ main, << pipeline.git.branch >> ]
     jobs:
       - fe-flow
