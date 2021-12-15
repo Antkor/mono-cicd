@@ -40,3 +40,7 @@ workflows:
             branches:
               only: 
                 - main
+      - hold: 
+          type: approval 
+          requires: 
+            - fe-flow
