@@ -35,6 +35,8 @@ jobs:
 workflows:
   test-build-fe:
     jobs:
-      - fe-flow
-    when:
-      equal: [ main, << pipeline.git.branch >> ]
+      - fe-flow: 
+          filters: 
+            branches:
+              only:
+                - main
