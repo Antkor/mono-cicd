@@ -10,7 +10,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        key: npm-deps-{{ checksum "package.json" }}-{{checksum "package-lock.json" }}
+          keys: 
+            - npm-deps-{{ checksum "package.json" }}-{{checksum "package-lock.json" }}
       - run:
           # Check if node_modules exist from cache, otherwise run npm ci again
           name: Install node dependencies
