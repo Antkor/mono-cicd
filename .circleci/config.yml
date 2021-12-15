@@ -38,6 +38,6 @@ workflows:
     jobs:
       - fe-flow: 
           filters:
-            tags:
+            bracnhes:
               only: 
                 - main
