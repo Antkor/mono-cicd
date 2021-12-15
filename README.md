@@ -106,4 +106,4 @@ Visit [Nx Cloud](https://nx.app/) to learn more.
 
 ## CircleCI
 
-test
+testing circleci
