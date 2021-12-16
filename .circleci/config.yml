@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   nx: nrwl/nx@1.1.2
+  slack: circleci/slack@4.5.1
 
 jobs:
   fe-flow:
@@ -36,3 +37,6 @@ workflows:
   test-build-fe:
     jobs:
       - fe-flow
+      - slack/notify:
+        event: pass
+        template: success_tagged_deploy_1
