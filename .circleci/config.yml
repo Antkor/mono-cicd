@@ -33,11 +33,10 @@ jobs:
           name: Copy files to server
 
 workflows:
-  version: 2
   test-build-fe:
     jobs:
       - fe-flow: 
           filters:
-            bracnhes:
+            branches:
               only: 
                 - main
