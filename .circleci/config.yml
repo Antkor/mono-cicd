@@ -35,12 +35,4 @@ jobs:
 workflows:
   test-build-fe:
     jobs:
-      - fe-flow: 
-          filters:
-            branches:
-              only: 
-                - main
-      - hold: 
-          type: approval 
-          requires: 
-            - fe-flow
+      - fe-flow
