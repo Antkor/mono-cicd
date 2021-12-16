@@ -42,3 +42,7 @@ workflows:
       - fe-flow:
           context: 
             - Slack
+      - hold:
+          type: approval 
+          requires: 
+            - fe-flow
