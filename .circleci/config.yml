@@ -32,11 +32,11 @@ jobs:
             scp -o StrictHostKeyChecking=no -r dist/apps/monofe/* $USER@188.166.104.56:/home/$USER/deploy
             ssh -o StrictHostKeyChecking=no $USER@$DEMO_SERVER_ADRESS 'nohup /home/$USER/deploy.sh'
           name: Copy files to server
+      - slack/notify:
+          event: pass
+          template: success_tagged_deploy_1
 
 workflows:
   test-build-fe:
     jobs:
       - fe-flow
-      - slack/notify:
-        event: pass
-        template: success_tagged_deploy_1
